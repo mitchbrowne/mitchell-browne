@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { requestAllShapes } from '../helpers/fireUtils';
+import { requestSmallShapes, requestMediumShapes, requestLargeShapes } from '../helpers/fireUtils';
 import Shape from '../components/Shape';
 
 import {
@@ -13,6 +13,8 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
+      smallShapes: null,
+      mediumShapes: null,
       largeShapes: null,
       width: 0,
       height: 0,
@@ -78,10 +80,10 @@ export default class Home extends Component {
     let shapes;
     if (window.innerWidth < 700) {
       console.log("Small window");
-      shapes = this.props.shapes_small;
+      shapes = this.state.smallShapes;
     } else if (window.innerWidth < 1150) {
       console.log("Medium window");
-      shapes = this.props.shapes_medium;
+      shapes = this.state.mediumShapes;
     } else {
       console.log("Large window");
       shapes = this.state.largeShapes;
@@ -111,20 +113,28 @@ export default class Home extends Component {
   updateDimensions = () => {
       this.setState({ width: window.innerWidth, height: window.innerHeight });
     };
-  async componentDidMount() {
-      window.addEventListener('resize', this.updateDimensions);
-      await requestAllShapes().then((allShapes) => {
-        this.setState({largeShapes: allShapes})
-      })
-    }
-  componentWillUnmount() {
-      window.removeEventListener('resize', this.updateDimensions);
-    }
 
-    handleEdit(event) {
-      console.log("HEY");
-      this.setState({editMode: !this.state.editMode});
-    }
+  async componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+    await requestSmallShapes().then((smallShapes) => {
+      this.setState({smallShapes: smallShapes});
+    })
+    await requestMediumShapes().then((mediumShapes) => {
+      this.setState({mediumShapes: mediumShapes});
+    })
+    await requestLargeShapes().then((largeShapes) => {
+      this.setState({largeShapes: largeShapes});
+    })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
+
+  handleEdit(event) {
+    console.log("HEY");
+    this.setState({editMode: !this.state.editMode});
+  }
 
   render() {
     if (this.state.largeShapes === null) return (

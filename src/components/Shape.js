@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { updateLargeShapeAttributes } from '../helpers/fireUtils.js';
+import {updateSmallShapeAttributes, updateMediumShapeAttributes, updateLargeShapeAttributes } from '../helpers/fireUtils.js';
 
 export default class Shape extends Component {
   constructor() {
@@ -18,29 +18,15 @@ export default class Shape extends Component {
       fontSize: event.target.style.fontSize,
     }
     console.log(shapeAttributes);
-    // Meteor.call('shapes.setAttributes',
-    //               shapeId,
-    //               shapeAttributes,
-    //             );
     if (window.innerWidth < 700) {
       console.log("Small window update");
-      // Meteor.call('shapes_small.setAttributes',
-      //               shapeId,
-      //               shapeAttributes,
-      //             );
+      updateSmallShapeAttributes(shapeId, shapeAttributes);
     } else if (window.innerWidth < 1150) {
       console.log("Medium window update");
-      // Meteor.call('shapes_medium.setAttributes',
-      //               shapeId,
-      //               shapeAttributes,
-      //             );
+      updateMediumShapeAttributes(shapeId, shapeAttributes);
     } else {
       console.log("Large window update");
       updateLargeShapeAttributes(shapeId, shapeAttributes);
-      // Meteor.call('shapes_large.setAttributes',
-      //               shapeId,
-      //               shapeAttributes,
-      //             );
     }
   }
 
