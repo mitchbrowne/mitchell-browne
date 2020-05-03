@@ -15,9 +15,9 @@ code {
 @import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
 
-/* * {
-  border: 1px red solid;
-} */
+// * {
+//   border: 1px red solid;
+// }
 
 body {
   margin: 0;
@@ -38,7 +38,26 @@ a {
   position: relative;
 }
 
+#home-container {
+  z-index: 10;
+  height: 98vh;
+  margin: 0;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+}
+
+#content-container {
+  z-index: 10;
+  height: 98vh;
+  margin: 0;
+  min-height: 100%;
+  position: absolute;
+  top: 1000;
+}
+
 #edit-button {
+  position: fixed;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -50,6 +69,24 @@ a {
   color: white;
   background-color: black;
   border-radius: 3em;
+  font-family: 'Alata', sans-serif;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+
+#slide-button {
+  position: fixed;
+  right: 1vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  color: white;
+  background-color: black;
   font-family: 'Alata', sans-serif;
   font-size: 0.7em;
   cursor: pointer;

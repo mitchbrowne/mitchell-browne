@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import {updateSmallShapeAttributes, updateMediumShapeAttributes, updateLargeShapeAttributes } from '../helpers/fireUtils.js';
 
 export default class Shape extends Component {
-  constructor() {
-    super();
-    this.handleUpdateAttributes = this.handleUpdateAttributes.bind(this);
+  constructor(props) {
+    super(props);
+    this._handleUpdateAttributes = this._handleUpdateAttributes.bind(this);
+    this._handleLinkClick = this._handleLinkClick.bind(this);
   }
 
-  handleUpdateAttributes(event) {
+  _handleUpdateAttributes(event) {
     let shapeId = this.props.shape.id;
     const shapeAttributes = {
       width: event.target.style.width.replace('px', ''),
@@ -30,6 +31,11 @@ export default class Shape extends Component {
     }
   }
 
+  _handleLinkClick(e) {
+    console.log(e.target.id);
+    this.props.handleLinkClick(e.target.id)
+  }
+
   render() {
     const shape = this.props.shape.data();
     // add href link for each shape i.e. 'about' or 'projects' to then add to href
@@ -37,7 +43,6 @@ export default class Shape extends Component {
       width: `${shape.width}px`,
       height: `${shape.height}px`,
       fontSize: `${shape.fontSize}`,
-      // -webkit-transform: 'translate(20px, 20px)',
       transform: `translate(${shape.data_x}px, ${shape.data_y}px)`
     }
     const isEditMode = this.props.editMode;
@@ -50,7 +55,7 @@ export default class Shape extends Component {
         style={shapeStyle}
         data-x={shape.data_x}
         data-y={shape.data_y}
-        onMouseUp={isEditMode ? this.handleUpdateAttributes : ''}
+        onMouseUp={isEditMode ? this._handleUpdateAttributes : this._handleLinkClick}
       >
         {isEditMode
           ? <>

@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 
 import interact from 'interactjs';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 export default class Home extends Component {
   constructor() {
@@ -19,7 +19,13 @@ export default class Home extends Component {
       width: 0,
       height: 0,
       editMode: false,
+      homeHidden: false,
+      content: null,
     }
+
+    this._handleEdit = this._handleEdit.bind(this);
+    this._handleSlide = this._handleSlide.bind(this);
+    this._handleLinkClick = this._handleLinkClick.bind(this);
 
     interact('.resize-drag')
       .resizable({
@@ -89,7 +95,12 @@ export default class Home extends Component {
       shapes = this.state.largeShapes;
     }
     if (shapes) {
-      return shapes.map((shape) => <Shape key={shape.id} shape={shape} editMode={this.state.editMode}/>);
+      return shapes.map((shape) => <Shape
+                                      key={shape.id}
+                                      shape={shape}
+                                      editMode={this.state.editMode}
+                                      handleLinkClick={this._handleLinkClick}
+                                    /> );
     }
   }
 
@@ -131,9 +142,40 @@ export default class Home extends Component {
     window.removeEventListener('resize', this.updateDimensions);
   }
 
-  handleEdit(event) {
-    console.log("HEY");
+  _handleEdit() {
     this.setState({editMode: !this.state.editMode});
+  }
+
+  _handleSlide() {
+    let h = window.innerHeight;
+    if (this.state.homeHidden) {
+      $('#home-container').animate({top: 0}, 1000);
+      $('#content-container').animate({top: h}, 1000);
+    } else {
+      $('#home-container').animate({top: -h}, 1000);
+      $('#content-container').animate({top: 0}, 1000);
+    }
+    this.setState({homeHidden: !this.state.homeHidden});
+  }
+
+  _handleLinkClick(linkId) {
+    console.log(linkId);
+    this.setState({content: linkId});
+    this._handleSlide();
+  }
+
+  renderContent() {
+    if (this.state.content === null) {
+      return;
+    } else if (this.state.content === 'about') {
+      return (
+        <h1>What about?</h1>
+      )
+    } else if (this.state.content === 'title') {
+      return (
+        <h1>The Man Mitchell Browne</h1>        
+      )
+    }
   }
 
   render() {
@@ -146,8 +188,14 @@ export default class Home extends Component {
 
     return (
       <div id="container">
-        <div id="edit-button" onMouseDown={this.handleEdit.bind(this)}>Let's Work Together!</div>
-        {this.renderShapes()}
+        <div id="edit-button" onMouseDown={this._handleEdit}>Let's Work Together!</div>
+        <div id="slide-button" onMouseDown={this._handleSlide}>Take me home!</div>
+        <div id="home-container">
+          {this.renderShapes()}
+        </div>
+        <div id="content-container">
+          {this.renderContent()}
+        </div>
       </div>
     )
   }
