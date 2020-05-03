@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
+
+/* * {
+  border: 1px red solid;
+} */
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #fad5c0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#container {
+  z-index: 10;
+  height: 98vh;
+  margin: 1vh;
+  min-height: 100%;
+  position: relative;
+}
+
+#edit-button {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  color: white;
+  background-color: black;
+  border-radius: 3em;
+  font-family: 'Alata', sans-serif;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+
+.resize-drag {
+  z-index: -10;
+  font-family: 'Alata', sans-serif;
+  text-align: center;
+  line-height: 1;
+  vertical-align: middle;
+  width: 25%;
+  min-height: 6.5em;
+  position: absolute;
+  background-color: #deebe4;
+  color: #bc805b;
+  /* padding: 4%; */
+  touch-action: none;
+  user-select: none;
+  box-sizing: border-box;
+  -webkit-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.1em 0.1em 0.3em rgba(0,0,0,0.2);
+  border: 1px #bc805b dashed;
+}
+
+.resize-drag:hover {
+  border: 1.5px #bc805b dashed;
+}
+
+.resize-drag-off {
+  z-index: -10;
+  font-family: 'Alata', sans-serif;
+  text-align: center;
+  line-height: 1;
+  vertical-align: middle;
+  width: 25%;
+  min-height: 6.5em;
+  position: absolute;
+  background-color: #deebe4;
+  color: #bc805b;
+  /* padding: 4%; */
+  touch-action: none;
+  user-select: none;
+  box-sizing: border-box;
+  -webkit-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.1em 0.1em 0.3em rgba(0,0,0,0.2);
+}
+
+.resize-drag-off:hover {
+  // border: 1px #bc805b dashed;
+}
+
+@mixin lhCrop($line-height) {
+  &::before {
+    content: '';
+    // display: block;
+    // height: 0;
+    // width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+    // margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+#drag-1 {
+    @include lhCrop(12); //line-height: 1.2
+    line-height: 72pt;
+  font-family: 'Chelsea Market', cursive;
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
