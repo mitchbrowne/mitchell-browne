@@ -57,15 +57,7 @@ export default class Shape extends Component {
         data-y={shape.data_y}
         onMouseUp={isEditMode ? this._handleUpdateAttributes : this._handleLinkClick}
       >
-        {isEditMode
-          ? <>
-          {shape.content}
-          </>
-          : <a href="#">
-            {shape.content}
-          </a>
-        }
-
+        {shape.content}
       </div>
     )
   }

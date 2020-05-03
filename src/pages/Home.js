@@ -173,14 +173,14 @@ export default class Home extends Component {
       )
     } else if (this.state.content === 'title') {
       return (
-        <h1>The Man Mitchell Browne</h1>        
+        <h1>The Man Mitchell Browne</h1>
       )
     }
   }
 
   render() {
     if (this.state.largeShapes === null) return (
-      <Spinner animation="border" role="status">
+      <Spinner className="loading-spinner" animation="border" role="status">
         <span className="sr-only">Loading...</span>
       </Spinner>
     )
