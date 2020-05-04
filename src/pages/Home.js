@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { requestSmallShapes, requestMediumShapes, requestLargeShapes } from '../helpers/fireUtils';
 import Shape from '../components/Shape';
+import About from '../components/About';
+import Projects from '../components/Projects';
 
 import {
   Spinner
@@ -169,11 +171,11 @@ export default class Home extends Component {
       return;
     } else if (this.state.content === 'about') {
       return (
-        <h1>What about?</h1>
+        <About />
       )
     } else if (this.state.content === 'title') {
       return (
-        <h1>The Man Mitchell Browne</h1>
+        <Projects />
       )
     }
   }
