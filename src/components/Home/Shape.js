@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {updateSmallShapeAttributes, updateMediumShapeAttributes, updateLargeShapeAttributes } from '../helpers/fireUtils.js';
+import {updateSmallShapeAttributes, updateMediumShapeAttributes, updateLargeShapeAttributes } from '../../helpers/fireUtils.js';
 
 export default class Shape extends Component {
   constructor(props) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { requestSmallShapes, requestMediumShapes, requestLargeShapes } from '../helpers/fireUtils';
-import Shape from '../components/Shape';
-import About from '../components/About';
-import Projects from '../components/Projects';
+import Shape from '../components/Home/Shape';
+import About from './About';
+import Projects from './Projects';
 
 import {
   Spinner
