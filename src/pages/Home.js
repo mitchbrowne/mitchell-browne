@@ -162,6 +162,7 @@ export default class Home extends Component {
 
   _handleLinkClick(linkId) {
     console.log(linkId);
+    if (linkId === 'title') return;
     this.setState({content: linkId});
     this._handleSlide();
   }
@@ -173,7 +174,7 @@ export default class Home extends Component {
       return (
         <About />
       )
-    } else if (this.state.content === 'title') {
+    } else if (this.state.content === 'projects') {
       return (
         <Projects />
       )
@@ -182,9 +183,12 @@ export default class Home extends Component {
 
   render() {
     if (this.state.largeShapes === null) return (
-      <Spinner className="loading-spinner" animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
+      <div className="loading-spinner-container">
+        <Spinner className="centre-spinner loading-spinner" animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </div>
+
     )
 
 

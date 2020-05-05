@@ -60,6 +60,14 @@ a {
   overflow-y: scroll;
 }
 
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50vh;
+}
+
 #edit-button {
   position: fixed;
   z-index: 100;
@@ -94,6 +102,11 @@ a {
   font-family: 'Alata', sans-serif;
   font-size: 0.7em;
   cursor: pointer;
+}
+
+#title {
+  z-index: -100;
+  cursor: default;
 }
 
 .resize-drag {
@@ -147,10 +160,12 @@ a {
   justify-content: center;
   align-items: center;
   box-shadow: 0.1em 0.1em 0.3em rgba(0,0,0,0.2);
+  cursor: pointer;
+  // -webkit-transition: all .2s ease-in-out;
 }
 
 .resize-drag-off:hover {
-  // border: 1px #bc805b dashed;
+  // transform: scale(2, 2);
 }
 
 @mixin lhCrop($line-height) {
