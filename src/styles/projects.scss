@@ -9,11 +9,19 @@
 
 .projects-image {
   width: 100%;
-  height: auto;
+  min-height: 100%;
 }
 
 .white-panel {
   background-color: #fff;
   width: 100%;
   height: auto;
+}
+
+.slidenav {
+  color: #fff;
+  background-color: rgba(250, 213, 192, 0.7);
+  border-radius: 50%;
+  font-weight: 100;
+  text-decoration: none;
 }
