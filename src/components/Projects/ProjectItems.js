@@ -167,8 +167,8 @@ export default () => {
           </div>
           <div className="uk-panel uk-background-default">
             <div className="uk-padding">
-              <h1>{project.title}</h1>
-              <p>{project.desc}</p>
+              <h1 className="portfolio-header">{project.title}</h1>
+              <p className="portfolio-text">{project.desc}</p>
             </div>
           </div>
         </div>

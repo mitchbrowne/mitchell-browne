@@ -14,15 +14,8 @@ code {
 
 @import "~bootstrap/scss/bootstrap";
 
-@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
-
 @import url('https://fonts.googleapis.com/css?family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
-
-// * {
-//   border: 1px red solid;
-// }
 
 body {
   margin: 0;
@@ -30,12 +23,12 @@ body {
   background-color: #fad5c0;
 }
 
-h1 {
+.portfolio-header {
   font-family: 'Yeseva One', cursive;
   color: #bc805b;
 }
 
-p {
+.portfolio-text {
   font-family: 'Fira Mono', monospace;
 }
 
@@ -93,7 +86,7 @@ a {
   color: white;
   background-color: black;
   border-radius: 3em;
-  font-family: 'Alata', sans-serif;
+  font-family: 'Fira Mono', monospace;
   font-size: 0.7em;
   cursor: pointer;
 }
@@ -111,7 +104,7 @@ a {
   height: 70px;
   color: white;
   background-color: black;
-  font-family: 'Alata', sans-serif;
+  font-family: 'Fira Mono', monospace;
   font-size: 0.7em;
   cursor: pointer;
 }

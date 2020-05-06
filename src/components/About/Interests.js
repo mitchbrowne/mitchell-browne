@@ -27,7 +27,7 @@ export default () => {
           <div className="uk-inline-clip uk-transition-toggle" tabIndex="0">
             <img src={interest.img}/>
             <div className="uk-overlay uk-overlay-primary uk-transition-fade uk-position-cover uk-flex uk-flex-center uk-flex-middle">
-              <p className="uk-h4 uk-margin-remove">{interest.text}</p>
+              <p className="uk-h4 uk-margin-remove portfolio-text">{interest.text}</p>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default () => {
 
   return (
     <div>
-      <h1>Passions and Interests</h1>
+      <h1 className="portfolio-header">Passions and Interests</h1>
       <div className="uk-grid-column-medium uk-grid-row-large uk-child-width-1-3@s uk-text-center uk-margin-large" data-uk-grid>
         {displayInterests()}
       </div>

@@ -3,6 +3,8 @@ import { requestSmallShapes, requestMediumShapes, requestLargeShapes } from '../
 import Shape from '../components/Home/Shape';
 import About from './About';
 import Projects from './Projects';
+import Skills from './Skills';
+import Contact from './Contact';
 
 import {
   Spinner
@@ -178,13 +180,21 @@ export default class Home extends Component {
       return (
         <Projects />
       )
+    } else if (this.state.content === 'contact') {
+      return (
+        <Contact />
+      )
+    } else if (this.state.content === 'skills') {
+      return (
+        <Skills />
+      )
     }
   }
 
   render() {
     if (this.state.largeShapes === null) return (
       <div className="loading-spinner-container">
-        <Spinner className="centre-spinner loading-spinner" animation="border" role="status">
+        <Spinner className="centre-spinner loading-spinner" animation="border" role="status" variant="light">
           <span className="sr-only">Loading...</span>
         </Spinner>
       </div>

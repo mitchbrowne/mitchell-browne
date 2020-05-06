@@ -15,8 +15,8 @@ export default () => {
       <div className="uk-block-default">
         <div className="tm-middle uk-grid" data-uk-grid-match data-uk-grid-margin>
           <div className="uk-width-medium-1-1">
-            <div className="uk-text-center">
-              <h1>Projects</h1>
+            <div className="uk-text-center uk-margin-medium-top uk-margin-medium-bottom">
+              <h1 className="portfolio-header">Projects</h1>
             </div>
             <ProjectItems />
           </div>
