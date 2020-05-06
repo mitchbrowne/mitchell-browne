@@ -8,10 +8,12 @@ export default () => {
     },
     {
       text: 'Caltex All Rounder Medal',
+      link: 'http://www.caltexbestallrounder.com.au/',
       img: 'https://images.unsplash.com/photo-1588458824535-b940dbbb505a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80'
     },
     {
       text: 'StayHomeHack Team Lead',
+      link: 'https://stayhomehack.com/',
       img: 'https://images.unsplash.com/photo-1588458824535-b940dbbb505a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80'
     }
   ]

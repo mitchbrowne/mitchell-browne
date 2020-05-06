@@ -17,6 +17,9 @@ code {
 @import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
+
 // * {
 //   border: 1px red solid;
 // }
@@ -25,6 +28,15 @@ body {
   margin: 0;
   overflow: hidden;
   background-color: #fad5c0;
+}
+
+h1 {
+  font-family: 'Yeseva One', cursive;
+  color: #bc805b;
+}
+
+p {
+  font-family: 'Fira Mono', monospace;
 }
 
 a {
@@ -111,7 +123,7 @@ a {
 
 .resize-drag {
   z-index: -10;
-  font-family: 'Alata', sans-serif;
+  font-family: 'Yeseva One', cursive;
   text-align: center;
   line-height: 1;
   vertical-align: middle;
@@ -140,7 +152,7 @@ a {
 
 .resize-drag-off {
   z-index: -10;
-  font-family: 'Alata', sans-serif;
+  font-family: 'Yeseva One', cursive;
   text-align: center;
   line-height: 1;
   vertical-align: middle;
@@ -182,7 +194,7 @@ a {
 #title {
     @include lhCrop(12); //line-height: 1.2
     line-height: 72pt;
-  font-family: 'Chelsea Market', cursive;
+  font-family: 'Yeseva One', cursive;
   background-color: transparent;
   color: white;
   box-shadow: 0 0 0 rgba(0,0,0,0);
