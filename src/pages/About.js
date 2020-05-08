@@ -13,8 +13,8 @@ export default () => {
         <div className="tm-middle uk-grid" data-uk-grid-match data-uk-grid-margin>
           <div className="uk-width-medium-1-1 uk-row-first">
               <AboutMe />
-              <Awards />
-              <Interests />
+              {/* <Awards />
+              <Interests /> */}
           </div>
         </div>
       </div>

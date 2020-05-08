@@ -5,3 +5,26 @@
   align-items: center;
   height: 98vh;
 }
+
+.contact-text {
+  text-align: center;
+}
+
+.contact-icon {
+  transform: scale(2);
+  margin: 0 1em;
+}
+
+.contact-icon:hover {
+  transform: scale(2.1);
+}
+
+.contact-icon-a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-icon-a:hover {
+  text-decoration: none;
+  color: #bc805b;
+}

@@ -2,33 +2,10 @@ import React from 'react';
 import UIkit from 'uikit';
 
 import Skill from '../components/Skills/Skill';
+import SkillsObject from '../components/Skills/SkillsObject';
 
 export default () => {
-  const skills = [
-    {
-      category: 'Technical',
-      skills: [
-        'Javascript',
-        'React',
-        'Ruby on Rails',
-        'SQL/PostgreSQL',
-        'NoSQL/MongoDB',
-        'Python',
-        'Node.js',
-        'jQuery'
-      ]
-    },
-    {
-      category: 'Soft',
-      skills: [
-        'Leadership',
-        'Communication',
-        'Problem Solving',
-        'Design'
-      ]
-    }
-
-  ]
+  const skills = SkillsObject();
 
   return (
     <div className="uk-container uk-container-center">
