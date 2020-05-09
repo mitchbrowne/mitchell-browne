@@ -66,25 +66,7 @@ a {
   margin-top: 50vh;
 }
 
-#edit-button {
-  position: fixed;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 70px;
-  height: 70px;
-  color: white;
-  background-color: black;
-  border-radius: 3em;
-  font-family: 'Fira Mono', monospace;
-  font-size: 0.7em;
-  cursor: pointer;
-}
-
-#slide-button {
+.control-button {
   position: fixed;
   right: 1vh;
   z-index: 100;
@@ -98,6 +80,7 @@ a {
   color: white;
   background-color: black;
   font-family: 'Fira Mono', monospace;
+  border-radius: 3em;
   font-size: 0.7em;
   cursor: pointer;
 }

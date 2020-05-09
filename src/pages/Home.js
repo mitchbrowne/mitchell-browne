@@ -204,8 +204,12 @@ export default class Home extends Component {
 
     return (
       <div id="container">
-        <div id="edit-button" onMouseDown={this._handleEdit}>Let's Work Together!</div>
-        <div id="slide-button" onMouseDown={this._handleSlide}>Take me home!</div>
+        {this.state.homeHidden
+          ? <div className="control-button" onMouseDown={this._handleSlide}>Take me home!</div>
+          : <div className="control-button" onMouseDown={this._handleEdit}>Let's Work Together!</div>
+        }
+        {/* <div id="edit-button" onMouseDown={this._handleEdit}>Let's Work Together!</div>
+        <div id="slide-button" onMouseDown={this._handleSlide}>Take me home!</div> */}
         <div id="home-container">
           {this.renderShapes()}
         </div>
