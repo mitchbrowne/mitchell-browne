@@ -42,8 +42,12 @@ export default () => {
                 </ul>
               </div> */}
               <p uk-margin>
-                  <a class="uk-button uk-button-default project-button" href={project.appLink} target="_blank">Live Demo</a>
-                  <a class="uk-button uk-button-default project-button" href={project.gitLink} target="_blank">Github</a>
+                  {project.appLink &&
+                    <a class="uk-button uk-button-default project-button" href={project.appLink} target="_blank">Live Demo</a>
+                  }
+                  {project.gitLink &&
+                    <a class="uk-button uk-button-default project-button" href={project.gitLink} target="_blank">Github</a>
+                  }
                   {project.gitLinkBackend &&
                     <a class="uk-button uk-button-default project-button" href={project.gitLinkBackend} target="_blank">Github Backend</a>
                   }

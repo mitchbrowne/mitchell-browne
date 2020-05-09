@@ -136,8 +136,6 @@ export default () => {
         'XML/CSV',
         'Command Line Interface',
       ],
-      gitLink: 'https://github.com/mitchbrowne',
-      appLink: '#',
     },
   ]
 }

@@ -31,7 +31,7 @@ export default () => {
       skills: [
         'Trello',
         'Slack',
-        'Cross Functional Team Collaboration',
+        'Low Fidelity Prototyping',
         'Economics',
       ]
     },
