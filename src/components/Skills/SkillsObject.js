@@ -33,7 +33,7 @@ export default () => {
         'Git/Version Control',
         'Trello',
         'Slack',
-        'Debugging'
+        'Debugging',
         'Prototyping',
         'User Flow',
         'Economics',
