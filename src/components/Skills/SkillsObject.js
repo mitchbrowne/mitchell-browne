@@ -23,15 +23,19 @@ export default () => {
         'Problem Solving',
         'Design',
         'Networking',
-        'Collaboration'
+        'Collaboration',
+        'Adaptability'
       ]
     },
     {
       category: 'Other Relevant Skills',
       skills: [
+        'Git/Version Control',
         'Trello',
         'Slack',
-        'Low Fidelity Prototyping',
+        'Debugging'
+        'Prototyping',
+        'User Flow',
         'Economics',
       ]
     },
